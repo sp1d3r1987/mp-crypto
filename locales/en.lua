@@ -6,7 +6,10 @@ local Translations = {
         cryptostick_malfunctioned = 'Cryptostick malfunctioned'
     },
     success = {
-        you_have_exchanged_your_cryptostick_for = 'You have received: %{amount} GNE'
+        you_have_exchanged_your_cryptostick_for_gne = 'You have received: %{amount} GNE',
+        you_have_exchanged_your_cryptostick_for_lme = 'You have received: %{amount} LME',
+        you_have_exchanged_your_cryptostick_for_xcoin = 'You have received: %{amount} XCOIN',
+        you_have_exchanged_your_cryptostick_for_shung = 'You have received: %{amount} SHUNG'
     },
     credit = {
         there_are_amount_credited = 'There are %{amount} GNE(s) credited!',
