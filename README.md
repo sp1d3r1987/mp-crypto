@@ -2,7 +2,8 @@
 <br>
 
 # mp-crypto
-Crypto Script for QBCore (Updated with Target)
+Crypto Script for QBCore (Updated with Target) 
+Edited by sp1d3r1987 to allow cryptosticks to have chance to give different crypto when using renewed-phone crypto system.
 
 ## Discord
 
