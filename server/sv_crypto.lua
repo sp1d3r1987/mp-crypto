@@ -53,14 +53,44 @@ RegisterServerEvent('mp-crypto:ExchangeSuccess', function(LuckChance)
     end
 
     if Config.Crypto.Renewed then
-        exports['qb-phone']:AddCrypto(src, "gne", amount)
-        TriggerClientEvent('qb-phone:client:CustomNotification', src,
-            "CRYPTOMINER",
-            Lang:t('success.you_have_exchanged_your_cryptostick_for',{amount = amount}),
-            "fas fa-coins",
-            "#FFFFFF",
-            7500
-        )
+        local luck = math.random(0,100)
+        if luck <= 30 then
+            exports['qb-phone']:AddCrypto(src, "gne", amount)
+            TriggerClientEvent('qb-phone:client:CustomNotification', src,
+                "CRYPTOMINER",
+                Lang:t('success.you_have_exchanged_your_cryptostick_for_gne',{amount = amount}),
+                "fas fa-coins",
+                "#FFFFFF",
+                7500
+            )
+            elseif luck > 30 and luck <= 37 then
+                exports['qb-phone']:AddCrypto(src, "shung", amount)
+                TriggerClientEvent('qb-phone:client:CustomNotification', src,
+                    "CRYPTOMINER",
+                    Lang:t('success.you_have_exchanged_your_cryptostick_for_shung',{amount = amount}),
+                    "fas fa-coins",
+                    "#FFFFFF",
+                    7500
+                )
+            elseif luck > 37 and luck <= 82 then
+                exports['qb-phone']:AddCrypto(src, "lme", amount)
+                TriggerClientEvent('qb-phone:client:CustomNotification', src,
+                    "CRYPTOMINER",
+                    Lang:t('success.you_have_exchanged_your_cryptostick_for_lme',{amount = amount}),
+                    "fas fa-coins",
+                    "#FFFFFF",
+                    7500
+                )
+            elseif luck > 82 and luck <= 100 then
+                exports['qb-phone']:AddCrypto(src, "xcoin", amount)
+                TriggerClientEvent('qb-phone:client:CustomNotification', src,
+                    "CRYPTOMINER",
+                    Lang:t('success.you_have_exchanged_your_cryptostick_for_xcoin',{amount = amount}),
+                    "fas fa-coins",
+                    "#FFFFFF",
+                    7500
+                )
+        end
     elseif Config.Crypto.QBCore then
         Player.Functions.AddMoney('crypto', amount, 'crypto-exchange')
         TriggerClientEvent('QBCore:Notify', src, Lang:t('success.you_have_exchanged_your_cryptostick_for',{amount = amount}), "success", 3500)
